@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://cdn.icon-icons.com/icons2/2620/PNG/512/among_us_player_red_icon_156942.png">
+    <title>No elo elo</title>
+</head>
+<body>
+    <div class="suma">
+        <h3> SUMA TRZECH LICZB </h3>
+        <form>
+            <input type="number" id="a">
+            <input type="number" id="b">
+            <input type="number" id="c">
+            <input type="button" value="Dodaj" onclick="dodawanie()">
+        </form>
+    </div>
+    <div class="srednia">
+        <h3> ŚREDNIA TRZECH LICZB </h3>
+        <form>
+            <input type="number" id="d">
+            <input type="number" id="e">
+            <input type="number" id="f">
+            <input type="button" value="Średnia" onclick="srednia()">
+        </form>
+    </div>
+    <div class="wszystko">
+        <form>
+            <h3> WSZYSTKIE DZIALANIA </h3>
+            <input type="number" id="x">
+            <input type="number" id="y">
+            <input type="button" value="Oblicz" onclick="Oblicz()">
+        </form>
+    </div>
+                <div id="wynik"></div>
+                <div id="wynik1"></div>
+                <div id="wynik2"></div>
+                <div id="wynik3"></div>
+        <div class="pierwiastek">
+           <form>
+            <h3>PIERWIASTEK</h3>
+            <input type="number" id="g">
+            <input type="button" value="Pierwiastek" onclick="pierwiastek()">
+        </form> 
+        </div>
+        <div id="pierw"></div>
+        <div class="Kwadrat">
+            <form>
+             <h3>KWADRAT</h3>
+             <input type="number" id="k">
+             <input type="button" value="Kwadrat" onclick="kwadrat()">
+            </form> 
+         </div>
+         <div class="prostopadloscian">
+            <form>
+             <h3>PROSTOPADLOSCIAN</h3>
+             <input type="number" id="j">
+             <input type="number" id="l">
+             <input type="number" id="z">
+             <input type="button" value="Prostopadłoscian" onclick="prostopadloscian()">
+            </form> 
+         </div>
+         <div class="polekola">
+            <form>
+                <h3>POLE KOŁA</h3>
+                <input type="number" id="ccc">
+                <input type="button" value="Koło" onclick="kolo()">
+            </form> 
+         </div>
+         <div id="kolo"></div>
+         <div class="benz">
+            <h3>BENZYNA</h3>
+                <input type="number" id="aaa">
+                <input type="button" value="Benzyna" onclick="benzyna()">
+         </div>
+    <script>
+        function dodawanie()
+        {
+        var a = Number(document.getElementById("a").value);
+        var b = Number(document.getElementById("b").value);
+        var c = Number(document.getElementById("c").value);
+
+        alert(a + b + c);
+        } 
+        function srednia()
+        {
+        var d = Number(document.getElementById("d").value);
+        var e = Number(document.getElementById("e").value);
+        var f = Number(document.getElementById("f").value);
+        
+        alert((d + e + f) / 3);
+        } 
+        function Oblicz(){
+        let x = Number(document.getElementById("x").value);
+        let y = Number(document.getElementById("y").value);
+        document.getElementById("wynik").innerHTML = "Dodawanie wynosi:" +(x+y);
+        document.getElementById("wynik1").innerHTML = "Odejmowanie wynosi:" +(x-y);
+        document.getElementById("wynik2").innerHTML = "Mnożenie wynosi:" +(x*y);
+        document.getElementById("wynik3").innerHTML = "Dzielenie wynosi:" +(x/y);
+        if (y==0)
+            {
+             document.getElementById("wynik3").innerHTML = "Nie wolno dzielić przez zero";   
+            }
+    } 
+    function pierwiastek()
+    {
+        var g = Number(document.getElementById("g").value);
+        var wynik = Math.sqrt(g);
+        document.getElementById("pierw").innerHTML = "Pierwiastek wynosi: " + wynik;
+    }
+    function kwadrat ()
+    {
+        let k = Number(document.getElementById("k").value);
+        let kk = k * k;
+        alert("Pole kwadratu wynosi " + kk);
+    } 
+    function prostopadloscian ()
+    {
+        let j = Number(document.getElementById("j").value);
+        let l = Number(document.getElementById("l").value);
+        let z = Number(document.getElementById("z").value);
+        let jlz = 2 * (j * l + j * z + l * z);
+        alert("Pole prostopadloscianu wynosi " + jlz);
+    }
+    function kolo()
+    {
+        var c = Number(document.getElementById("ccc").value);
+        let pole = c * c * Math.PI;
+        let obwod = c * 2 * Math.PI;
+        document.getElementById("kolo").innerHTML= "Pole koła wynosi: " + pole + " Obwód koła wynosi: " + obwod;
+    }
+    function benzyna()
+    {
+        var aaa = Number(document.getElementById("aaa").value);
+        var aaaa = 360/(100/8)*aaa;
+        alert("Cena za przejazd wynosi " + aaaa);
+    }
+    </script>
+</body>
+</html>
